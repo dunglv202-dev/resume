@@ -1,0 +1,220 @@
+:root {
+  --black: #1e1e1e;
+  --green: #2cbdad;
+  --light-green: #6dded1;
+  --white: #fafafa;
+}
+html {
+  font-family: "Ubuntu", sans-serif;
+  color: var(--black);
+  font-size: 15px;
+}
+body {
+  padding: 0cm;
+}
+a {
+  text-decoration: inherit;
+  color: inherit;
+}
+.section-header {
+  text-transform: uppercase;
+  position: relative;
+}
+h2 {
+  font-size: 1.3rem;
+}
+h3 {
+  font-size: 1rem;
+}
+ul {
+  list-style-type: disc;
+  list-style: none;
+  padding: 0;
+}
+ul:not(.no-style) li::before {
+  content: "\2022";
+  color: var(--green);
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+}
+li {
+  padding: 0.2rem 0;
+}
+.period {
+  color: var(--green);
+  font-style: italic;
+}
+.title {
+  font-weight: bold;
+}
+
+/* == Header == */
+.name {
+  font-weight: normal;
+  font-size: 2.7rem;
+  margin: 0;
+}
+.position {
+  color: var(--green);
+  font-weight: normal;
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+}
+.introduction {
+  text-align: justify;
+}
+
+/* == Contact == */
+#contact {
+  background: var(--black);
+  padding: 0.8rem 1.5rem;
+  border-radius: 0.6rem;
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+  color: var(--white);
+}
+.fa-icon::before {
+  font-family: "Font Awesome 5 Pro", "Font Awesome 5 Brands";
+  margin-right: 0.5rem;
+}
+.mail:before {
+  content: "\f0e0";
+  font-weight: bold;
+}
+.github:before {
+  content: "\f09b";
+}
+.phone:before {
+  content: "\f095";
+  font-weight: bold;
+}
+.linkedin:before {
+  content: "\f08c";
+}
+
+/* == Sections == */
+section .section-header::before {
+  position: absolute;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  background: var(--black);
+  color: var(--white);
+  left: -2.5rem;
+  top: 0rem;
+  margin-top: -0.2rem;
+  border-radius: 50%;
+  font-weight: normal;
+}
+#objectives .section-header::before {
+  content: "\f648";
+}
+#experience .section-header::before {
+  content: "\f0b1";
+}
+#skills .section-header::before {
+  content: "\f7e2";
+}
+#projects .section-header::before {
+  content: "\f0ae";
+}
+#education .section-header::before {
+  content: "\f19d";
+}
+.section-container {
+  padding-left: 1.5rem;
+}
+
+/* == Skills == */
+#skills .skill-fragment {
+  display: inline;
+}
+
+section {
+  padding-left: 1rem;
+  position: relative;
+  margin-top: 2.2rem;
+}
+section.timeline > .section-container {
+  border-left: solid 2px var(--black);
+}
+section.timeline > .section-container > ul > li {
+  position: relative;
+}
+section.timeline > .section-container > ul > li::after {
+  content: "";
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 50%;
+  background: var(--green);
+  position: absolute;
+  left: -1.85rem;
+  box-shadow: 0 0 0 0.4rem var(--white);
+  top: 0.5rem;
+}
+section.timeline > .section-container > ul > li:last-child::before {
+  content: "";
+  background: white;
+  position: absolute;
+  width: 0.25rem;
+  height: 100%;
+  top: 0;
+  left: calc(-1.5rem - 0.25rem);
+}
+section.timeline li > h3 {
+  margin-top: 0 !important;
+}
+section::before {
+  content: "";
+  height: 0.3rem;
+  width: 100%;
+  background: linear-gradient(to right, var(--black) 33%, var(--green) 33% 66%, var(--light-green) 66%);
+  position: absolute;
+  top: -1.3rem;
+  left: 0;
+  border-radius: 0.2rem;
+}
+
+/* == Experience == */
+.job {
+  margin-bottom: 0;
+  font-weight: normal;
+}
+.job .job-position {
+  /* font-style: italic; */
+  font-weight: bold;
+}
+.job .company-name {
+  font-weight: bold;
+}
+.job + .period {
+  display: block;
+  padding: 0.5rem 0 0.3rem;
+}
+
+/* == Projects == */
+.external-link {
+  text-decoration: underline;
+}
+.project-name {
+  margin: 0.2rem 0;
+  font-size: 1.1rem;
+}
+.project-summary p {
+  margin: 0.5rem 0;
+}
+.project-summary ul {
+  margin-left: 1rem;
+}
+.project-summary ul li::before {
+  content: "-";
+}
+#project-list > li {
+  margin-bottom: 1rem;
+}
