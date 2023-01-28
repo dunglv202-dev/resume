@@ -218,3 +218,9 @@ section::before {
 #project-list > li {
   margin-bottom: 1rem;
 }
+
+@media screen and (max-width: 510px) {
+  #contact {
+    grid-template-columns: 1fr;
+  }
+}
